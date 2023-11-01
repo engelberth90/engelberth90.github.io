@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Configuración de auditorias mobiles PT 1.
-date: 2023-01-11
+date: 2023-11-01
 classes: wide
 header:
   teaser: /assets/images/android-hacking.png
