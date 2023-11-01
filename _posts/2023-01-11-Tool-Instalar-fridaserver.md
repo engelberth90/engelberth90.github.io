@@ -7,7 +7,6 @@ header:
   teaser: /assets/images/android-hacking.png
 categories:
   - Mobile
-  - Tool
 tags:
   - slae
   - assembly
