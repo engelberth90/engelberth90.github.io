@@ -15,19 +15,22 @@ tags:
 
 Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un ambiente para las auditorias mobiles.
 
-- [# Celular en modo Desarrollador.](#shellcode-analysis-1-linuxx86exec)
-- [#Instalación de Platform-tools para el uso de ADB.](#stepping-through-the-shellcode)
-- [# Instalación de frida server/client.](#shellcode-analysis-2-linuxx86shellreversetcp)
-- [Stepping through the shellcode](#stepping-through-the-shellcode-1)
+- [#Celular en modo Desarrollador](#Celular-en-modo-Desarrollador)
+- [#Instalación de Platform-tools para el uso de ADB](#Instalación-de-Platform-tools-para-el-uso-de-ADB)
+- [#Instalación de frida server/client](#shellcode-analysis-2-linuxx86shellreversetcp)
+- [#Instalación de certificado de Burp Suite](#stepping-through-the-shellcode-1)
 - [# Shellcode analysis #3: linux/x86/adduser](#shellcode-analysis-3-linuxx86adduser)
 - [Stepping through the shellcode](#stepping-through-the-shellcode-2)
 
-# Shellcode analysis #1: linux/x86/exec 
+# Celular en modo Desarrollador 
 ---------------------------------------
 
-The `linux/x86/exec` msfvenom payload simply executes an arbitrary program configured with the `CMD` parameter.
+Para las auditorias mobiles se requiere de un celular rooteado, esta guia no abarca la manera de rootear un dispositivo mobile,`CMD` parameter.
 
-The payload for this analysis was generated as follows:
+# Paso 1:
+Acceder a las configuraciones del celular y dirigirnos a la opción `Acerca del telefono`.
+
+![](\assets\images\Hacking-mobile\acerca-phone.jpeg)
 
 ```
 slemire@slae:~/slae32/assignment5/1_exec$ msfvenom -p linux/x86/exec -f c -o exec_shellcode CMD=/usr/bin/id                              
@@ -127,7 +130,7 @@ Payload size: 47 bytes
 0000002E  80                db 0x80
 ```
 
-## Stepping through the shellcode
+## Instalación de Platform-tools para el uso de ADB
 
 The syscall for `execve` is `0xb` and needs to be placed into the `$eax` register before calling `int 0x80`. It could be done with `mov eax, 0xb` but this uses a longer shellcode, so instead the `push` and `pop` instructions are used to place the `0xb` in the `$eax` register.
 ```nasm
