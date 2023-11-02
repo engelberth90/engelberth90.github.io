@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Configuración de auditorias mobiles PT 1.
+title: Configuración para auditorias mobiles PT 1.
 date: 2023-11-01
 classes: wide
 header:
