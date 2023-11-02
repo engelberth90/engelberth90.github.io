@@ -8,9 +8,8 @@ header:
 categories:
   - Mobile
 tags:
-  - slae
-  - assembly
-  - encoding
+  - Mobile
+  - Windows
 ---
 
 Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un ambiente para las auditorias mobiles.
