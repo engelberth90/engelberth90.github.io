@@ -15,22 +15,46 @@ tags:
 
 Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un ambiente para las auditorias mobiles.
 
-- [#Celular en modo Desarrollador](#Celular-en-modo-Desarrollador)
-- [#Instalación de Platform-tools para el uso de ADB](#Instalación-de-Platform-tools-para-el-uso-de-ADB)
-- [#Instalación de frida server/client](#shellcode-analysis-2-linuxx86shellreversetcp)
+- [#Celular en modo Desarrollador](#celular-en-modo-Desarrollador)
+- [#Instalación de Platform tools para el uso de ADB](#instalación-de-Platform-tools-para-el-uso-de-ADB)
+- [#Instalación de frida server/client](#Instalación-de-frida-serverclient)
 - [#Instalación de certificado de Burp Suite](#stepping-through-the-shellcode-1)
 - [# Shellcode analysis #3: linux/x86/adduser](#shellcode-analysis-3-linuxx86adduser)
 - [Stepping through the shellcode](#stepping-through-the-shellcode-2)
 
-# Celular en modo Desarrollador 
+# celular en modo Desarrollador 
 ---------------------------------------
 
-Para las auditorias mobiles se requiere de un celular rooteado, esta guia no abarca la manera de rootear un dispositivo mobile,`CMD` parameter.
+Para las auditorias mobiles se requiere de un celular rooteado, esta guia no abarca la manera de rootear un dispositivo mobile.
 
-# Paso 1:
+## Paso 1:
 Acceder a las configuraciones del celular y dirigirnos a la opción `Acerca del telefono`.
 
 ![](\assets\images\Hacking-mobile\acerca-phone.jpeg)
+
+## Paso 2:
+Luego nos dirigimos a la opción de `Información del Software`, donde visualizaremos diferentes opciones pero nos centraremos en la opción de `Build number` para darle click varias veces hasta que nos diga que tenemos  activado el modo desarrollador.
+
+![](\assets\images\Hacking-mobile\modo-desarrollador.jpeg)
+
+Teniendo esto activo, nos dirigimos a las configuraciones generales y hasta abajo encontraremos la opción `Opcion de Desarrollador` o `Developer Options`.
+
+![](\assets\images\Hacking-mobile\desarrollador-activo.jpeg)
+
+Con esto hecho solo nos falta habilitar la depueración por ADB para que nos podamos conectar por medio de ADB al dispositivo.
+
+![](\assets\images\Hacking-mobile\adb-on.jpeg)
+
+Teniendo esto liso, procedemos a descargar el paquete de herramientas para SDK de android, en mi caso instalare el paquete para Windows:
+
+![](\assets\images\Hacking-mobile\jdk-windows.png)
+
+Para la siguiente ventana que se muestra solo tenemos que aceptar los terminos y se descargara el paquete para windows:
+
+![](\assets\images\Hacking-mobile\jdk-windows.png)
+
+El sitio oficial para los paquetes JDK de android:
+- [https://developer.android.com/tools/releases/platform-tools?hl=es-419](https://developer.android.com/tools/releases/platform-tools?hl=es-419)
 
 ```
 slemire@slae:~/slae32/assignment5/1_exec$ msfvenom -p linux/x86/exec -f c -o exec_shellcode CMD=/usr/bin/id                              
