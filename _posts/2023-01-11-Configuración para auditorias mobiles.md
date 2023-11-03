@@ -4,13 +4,14 @@ title: Configuración para auditorias mobiles PT 1.
 date: 2023-11-01
 classes: wide
 header:
-  teaser: /assets/images/android-hacking.png
+  #teaser: /assets/images/android-hacking.png
 categories:
   - Mobile
 tags:
   - Mobile
   - Windows
 ---
+![](\assets\images\Hacking-mobile\android-hacking.png)
 
 Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un ambiente para las auditorias mobiles.
 
@@ -61,7 +62,7 @@ Teniendo esto liso, procedemos a descargar el paquete de herramientas para SDK d
 
 Para la siguiente ventana que se muestra solo tenemos que aceptar los terminos y se descargara el paquete para windows:
 
-![](\assets\images\Hacking-mobile\jdk-windows.png)
+![](\assets\images\Hacking-mobile\jdk-download.png)
 
 El sitio oficial para los paquetes JDK de android:
 - [https://developer.android.com/tools/releases/platform-tools?hl=es-419](https://developer.android.com/tools/releases/platform-tools?hl=es-419)
@@ -79,6 +80,11 @@ luego abrimos una terminal dentro de la carpeta de platform-tools y con el coman
 Vemos que la respuesta es el valor del ID del dispositivo con el cual, procedemos a conectarnos con el comando `adb connect [ID-Device]`, luego de hacer la conección, con el comando `adb shell` obtenemos una shell interactica con el dispositivo Android
 
 ![](\assets\images\Hacking-mobile\abd-command.png)
+
+
+
+
+
 
 
 ```
