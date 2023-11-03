@@ -19,8 +19,6 @@ Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un amb
 - [# Descarga de platform tools para el uso de adb](#descarga-de-platform-tools-para-el-uso-de-adb)
 - [# Instalación de frida](#instalación-de-frida)
 - [# Instalación de certificado de burp suite](#instalación-de-certificado-de-burp-suite)
-- [# Shellcode analysis #3: linux/x86/adduser](#shellcode-analysis-3-linuxx86adduser)
-- [Stepping through the shellcode](#stepping-through-the-shellcode-2)
 
 # celular en modo Desarrollador 
 ---------------------------------------
@@ -106,12 +104,14 @@ Para frida server, primero necesitamos saber la arquitectura del dispositivo and
 Para saber si nuestra arquitextura es de 32 o 64 bits, estas son sus clasificaciones:
 
 32 Bits
--x86.
--armeabi-v7a.
+- [# x86.]
+- [# armeabi-v7a.]
+
 
 64 Bits
--arm64-v8a.
--x86_64.
+- [# arm64-v8a.]
+- [# -x86_64..]
+
 
 Luego necesitaremos descargar el binario que se adapte a la arquitectura de nuestro dispositivo, los binarios los podemos descargar del siguiente link:
 
