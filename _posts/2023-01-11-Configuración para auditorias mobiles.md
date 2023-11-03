@@ -142,3 +142,43 @@ Del lado de frida client, logramos ver los procesos que estan corriendo donde te
 
 Abrimos nuestro burp suite y nos dirigimos a la opcion de proxy -> proxy settings:
 
+![](\assets\images\Hacking-mobile\proxy-settings.png)
+ 
+ Dentro de `Proxy Settings` encontraremos la opción de `Regenerate CA certificate`:
+
+![](\assets\images\Hacking-mobile\regenerate-certificate.png)
+
+
+ Le damos click y aceptamos la advertencia de regenerar un nuevo certificado.
+ Luego de esto en la configuracion de proxy, establecemos la IP que nos da nuestro router con un puerto:
+
+![](\assets\images\Hacking-mobile\IP-Port.png)
+
+Con esto hecho, nos dirigimos a las configuraciones de nuestro celular de pruebas, vamos a `WIFI` y damos click en el WIFI al que estamos conectados (es necesario que el celular como la computadora esten conectado en la misma red), ahora buscamos la opcion de `Proxy` donde especificaremos la IP y puerto que establecimos en burp suite:
+
+![](\assets\images\Hacking-mobile\configurando-proxy .png)
+
+ Con esto hecho, nos dirigimos a Google Chrome y en el buscador colocamos la direccion IP y Puerto de burpsuite para luego descargar el certificado desde el servidor web:
+
+![](\assets\images\Hacking-mobile\descargando-certificado.png)
+
+Luego buscamos nuestro certificado y veremos que tiene una extension `.der` la cual tendremos que cambiar a `.cer`
+
+Con esto hecho, volvemos a configuraciones del celular y buscamos la opcion de credenciales de usuario:
+
+![](\assets\images\Hacking-mobile\credenciales.png)
+
+Luego de entrar a esta opcion nos dirigimos a la opcion de `Instalar desde la tarjeta SD` y tenemos que buscar el certificado que descargamos, luego de seleccionarlo les pedira autenticarse para confirmar la instalacion del certificado, luego de esto les pedire que le den un nombre al certificado, en este caso le dare el nombre de `Burp`
+
+![](\assets\images\Hacking-mobile\name-certificate.png)
+
+Ahora el certificado les aparecera instalado en el apartado de Usuario
+
+![](\assets\images\Hacking-mobile\certificado-user.png)
+
+Pero para poder interceptar necesitaremos el certificado a nivel de `sistema` y no de `usuario`, entonces para esto haremos uso de `Magisk` la cual es una herramienta que nos permite instalar modulos dependiendo nuestras necesidades:
+
+![](\assets\images\Hacking-mobile\magisk.png)
+
+En nuetro caso el modulo `Always Trust User Certificates` nos ayuda pasando el certificado a nivel de usuario a un certificado a nivel de sistema, esto lo logramos haciendo un reinicio del celular fisico.
+
