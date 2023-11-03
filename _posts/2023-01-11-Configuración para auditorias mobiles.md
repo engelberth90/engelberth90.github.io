@@ -172,6 +172,8 @@ Luego de entrar a esta opcion nos dirigimos a la opcion de `Instalar desde la ta
 
 ![](\assets\images\Hacking-mobile\name-certificate.png)
 
+Tienen que instalar el certificado para las opciones que les permita como: VPN, WIF, Apps.
+
 Ahora el certificado les aparecera instalado en el apartado de Usuario
 
 ![](\assets\images\Hacking-mobile\certificado-user.png)
@@ -182,3 +184,16 @@ Pero para poder interceptar necesitaremos el certificado a nivel de `sistema` y 
 
 En nuetro caso el modulo `Always Trust User Certificates` nos ayuda pasando el certificado a nivel de usuario a un certificado a nivel de sistema, esto lo logramos haciendo un reinicio del celular fisico.
 
+Despues de reiniciar el dispositivo, vamos a ver las credenciales a nivel de sistema y encontramos el certificado de `PortSwigger`.
+
+![](\assets\images\Hacking-mobile\system-certificate.png)
+
+Ahora para asegurarnos de que podemos interceptar las peticiones web que salgan desde el celular con Burp Suite a `Pxory > HTTP History` y en el celular vamos a Google Chrome e ingresamos a cualquier pagina solo para assegurarnos que interceptamos las peticiones burp suite:
+
+![](\assets\images\Hacking-mobile\interceptando.png)
+
+Vemos que todo esta funcionando de maravilla ya que logramos interceptar las peticioenes.
+
+Espero este post sea de utilidad para los entusiastas hackers.
+
+HAPPY HACKING!
