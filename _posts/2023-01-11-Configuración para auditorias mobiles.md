@@ -82,6 +82,24 @@ Vemos que la respuesta es el valor del ID del dispositivo con el cual, procedemo
 ![](\assets\images\Hacking-mobile\abd-command.png)
 
 
+# Instalación de frida server/client
+
+# Paso 1:
+
+Primero se necesita instalar python en nuestro ordenador y agregar python al path del systema.
+- [https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+# Paso 2:
+
+Para instalar frida cliente, solo necesitamos ejecutar el siguiente comando en la terminal de windowss: `pip install frida-tools`
+
+![](\assets\images\Hacking-mobile\instalando-frida.png)
+
+Como logramos ver, instalamos la herramienta de frida y lo comprobamos lanzando el comando `frida --version` la cual nos muestra la versión de frida que tenemos instalada.
+
+# Paso 3:
+
+
 
 
 
