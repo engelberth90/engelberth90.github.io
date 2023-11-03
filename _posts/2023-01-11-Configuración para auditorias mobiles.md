@@ -17,7 +17,7 @@ Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un amb
 
 - [# Celular en modo Desarrollador](#celular-en-modo-Desarrollador)
 - [# Descarga de platform tools para el uso de adb](#descarga-de-platform-tools-para-el-uso-de-adb)
-- [# Instalación de frida server/client](#instalación-de-frida-serverclient)
+- [# Instalación de frida](#instalación-de-frida)
 - [# Instalación de certificado de Burp Suite](#instalación-de-certificado-de-burp-suite)
 - [# Shellcode analysis #3: linux/x86/adduser](#shellcode-analysis-3-linuxx86adduser)
 - [Stepping through the shellcode](#stepping-through-the-shellcode-2)
@@ -82,7 +82,7 @@ Vemos que la respuesta es el valor del ID del dispositivo con el cual, procedemo
 ![](\assets\images\Hacking-mobile\abd-command.png)
 
 
-# Instalación de frida server/client
+# Instalación de frida
 
 # Paso 1:
 
@@ -126,8 +126,15 @@ Luego de que tenemos el binario lo subiremos con el comando: `adb push [ruta del
 
 ![](\assets\images\Hacking-mobile\push-server.png)
 
-luego ingresamos en la ruta /data/local/tmp dentro del celular para visualizar el binario:
+luego ingresamos en la ruta /data/local/tmp dentro del celular para visualizar el binario y vemos que lo tenemos guardado, solo tenemos que darle permisos de ejecución con el siguiente comando : `chmod +x [file-name]`
 
+![](\assets\images\Hacking-mobile\friida-server-command.png)
+
+Teniendo listo el servidor de frida, procedemos a probar que exista conexion entre el server y el client de la siguiente manera, en adb ejecutamos frida server con el siguiente comando: `./frida-server-16.1.4-android-arm &` con `&` al final para mandarlo a segundo plano y asi poder hacer uso de la terminal de adb, luego desde frida client ejecutamos el siguiente comando: `frida-ps -U` el `frida-ps` es para especificar que queremos listar procesos del servidor de frida y el `-U` es para especificar que la conexion es por medio de USB.
+
+![](\assets\images\Hacking-mobile\frida-ps.png)
+
+Del lado de frida client, logramos ver los procesos que estan corriendo donde tenemos el servidor de frida.
 
 
 ```
