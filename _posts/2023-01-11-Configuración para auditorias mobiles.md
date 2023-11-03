@@ -18,7 +18,7 @@ Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un amb
 - [# Celular en modo Desarrollador](#celular-en-modo-Desarrollador)
 - [# Descarga de platform tools para el uso de adb](#descarga-de-platform-tools-para-el-uso-de-adb)
 - [# Instalación de frida server/client](#instalación-de-frida-serverclient)
-- [# Instalación de certificado de Burp Suite](#instalacion-de-certificado-de-burp-suite)
+- [# Instalación de certificado de Burp Suite](#instalación-de-certificado-de-burp-suite)
 - [# Shellcode analysis #3: linux/x86/adduser](#shellcode-analysis-3-linuxx86adduser)
 - [Stepping through the shellcode](#stepping-through-the-shellcode-2)
 
@@ -99,9 +99,34 @@ Como logramos ver, instalamos la herramienta de frida y lo comprobamos lanzando 
 
 # Paso 3:
 
+Para frida server, primero necesitamos saber la arquitectura del dispositivo android, eso lo podemos hacer conectandonos por ADB y ejecutando el siguiente comando:`getprop ro.product.cpu.abi`
 
+![](\assets\images\Hacking-mobile\arquitectura-phone.png)
 
+Para saber si nuestra arquitextura es de 32 o 64 bits, estas son sus clasificaciones:
 
+32 Bits
+-x86.
+-armeabi-v7a.
+
+64 Bits
+-arm64-v8a.
+-x86_64.
+
+Luego necesitaremos descargar el binario que se adapte a la arquitectura de nuestro dispositivo, los binarios los podemos descargar del siguiente link:
+
+- [https://github.com/frida/frida/releases](https://github.com/frida/frida/releases)
+
+Luego de que identificamos el binario que necesitamos, damos click sobre el para descargarlo:
+
+![](\assets\images\Hacking-mobile\descargando-serverfrida.png)
+
+Veremos un archivo comprimido, procedemos a descomprimirlo para obtener el binario.
+Luego de que tenemos el binario lo subiremos con el comando: `adb push [ruta del binario] [ruta a guardar celular]` 
+
+![](\assets\images\Hacking-mobile\push-server.png)
+
+luego ingresamos en la ruta /data/local/tmp dentro del celular para visualizar el binario:
 
 
 
