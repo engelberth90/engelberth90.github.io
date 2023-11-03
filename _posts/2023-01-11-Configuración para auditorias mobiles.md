@@ -18,7 +18,7 @@ Dentro de este blog se llevara el paso a paso sobre lo que se necesita en un amb
 - [# Celular en modo Desarrollador](#celular-en-modo-Desarrollador)
 - [# Descarga de platform tools para el uso de adb](#descarga-de-platform-tools-para-el-uso-de-adb)
 - [# Instalación de frida](#instalación-de-frida)
-- [# Instalación de certificado de Burp Suite](#instalación-de-certificado-de-burp-suite)
+- [# Instalación de certificado de burp suite](#instalación-de-certificado-de-burp-suite)
 - [# Shellcode analysis #3: linux/x86/adduser](#shellcode-analysis-3-linuxx86adduser)
 - [Stepping through the shellcode](#stepping-through-the-shellcode-2)
 
@@ -124,7 +124,7 @@ Luego de que identificamos el binario que necesitamos, damos click sobre el para
 Veremos un archivo comprimido, procedemos a descomprimirlo para obtener el binario.
 Luego de que tenemos el binario lo subiremos con el comando: `adb push [ruta del binario] [ruta a guardar celular]` 
 
-![](\assets\images\Hacking-mobile\push-server.png)
+![](\assets\images\Hacking-mobile\push-server-ofuscado.png)
 
 luego ingresamos en la ruta /data/local/tmp dentro del celular para visualizar el binario y vemos que lo tenemos guardado, solo tenemos que darle permisos de ejecución con el siguiente comando : `chmod +x [file-name]`
 
@@ -136,4 +136,9 @@ Teniendo listo el servidor de frida, procedemos a probar que exista conexion ent
 
 Del lado de frida client, logramos ver los procesos que estan corriendo donde tenemos el servidor de frida.
 
+#  Instalación de certificado de burp suite
+
+# Paso 1:
+
+Abrimos nuestro burp suite y nos dirigimos a la opcion de proxy -> proxy settings:
 
