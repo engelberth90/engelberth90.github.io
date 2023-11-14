@@ -30,9 +30,9 @@ Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es 
 
 ### Tools used
 
-- [https://github.com/MobSF/Mobile-Security-Framework-MobSF](MOBSF)
-- [https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-gui-1.4.7-no-jre-win.exe](JADX)
-- [https://github.com/iBotPeaches/Apktool](APK Tool)
+- [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF)
+- [JADX](https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-gui-1.4.7-no-jre-win.exe)
+- [Apktool](https://github.com/iBotPeaches/Apktool)
 
 ### Nmap
 
