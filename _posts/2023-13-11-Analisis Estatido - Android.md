@@ -1,29 +1,32 @@
 ---
 layout: single
-title: Smasher - Hack The Box
-date: 2018-11-24
+title: Analisis estatico - Android
+date: 2023-11-13
 classes: wide
 header:
-  teaser: /assets/images/htb-writeup-smasher/smasher.png
+  teaser: /assets/images/Estatico-Android/rootME.jpg
 categories:
-  - hackthebox
-  - infosec
+  - Static Analysis
+  - Android Hacking
+  - Mobile
 tags:
-  - hackthebox
-  - binary exploit  
+  - Analysis
+  - MobSF
+  - JADX
+  - APK Tool  
 ---
 
-## Linux / 10.10.10.89
+## Static analysis of android applications
 
 ![](/assets/images/htb-writeup-smasher/smasher.png)
 
-This blog post is a writeup of the excellent Hack the Box machine created by dzonerzy.
+Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es el analisis dinamico de una sobre un APK.
 
-### Summary
+### Resumen
 
-- The webserver used is vulnerable to a path traversal bug and buffer overflow in the GET parameter
-- By using the path traversal bug we can get the Makefile and copy of the webserver executable
-- The buffer overflow can be solved by leaking libc's base address and then building a ropchain to ret2libc
+- Extraer APK del dispotivo.
+- Analisis estatico automatico con MOBSF.
+- Analisis estatico manual con JADX.
 - To gain user, we have to solve an Oracle padding challenge that gives us the user password
 - Priv esc is a race condition in a suid root ELF binary, we can swap out the file with a symlink to /root/root.txt to get the root flag
 
