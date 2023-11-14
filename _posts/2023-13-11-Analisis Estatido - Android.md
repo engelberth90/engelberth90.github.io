@@ -47,14 +47,16 @@ Nos dirigimos a nuestra maquina Linux, en mi caso sera `Kali Linux` y necesitare
 
 Luego de clonar el repositorio, necesitaremos montar un contenedor de docker con la herramienta para hacer uso de todos los recursos que MobSF necesita, utilizaremos el comando: `docker pull opensecurity/mobile-security-framework-mobsf:latest`, para este punto tendremos que tenes instalado docker en nuestra maquina linux:
 
-```                                                                                                                                                               
-┌──(T1N0㉿kali)-[~/Documents/mobile]
-└─$ ls   
-Mobile-Security-Framework-MobSF                                                                                                                                                                         
-┌──(T1N0㉿kali)-[~/Documents/mobile]
+```                                                           
+┌──(engelberth㉿kali)-[~/Documents/mobile]
+└─$ ls
+Mobile-Security-Framework-MobSF  frida-ios-dump
+                                               
+┌──(engelberth㉿kali)-[~/Documents/mobile]
 └─$ 
 
 ```
+Seguido esto ya solo necesitamos correr el contenedor en nuestro local host y especificando en el puerto local `8080` con el siguiente comando: `docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest`, luego de que se haya ejecutado todo, solo necesitamos especificar `http://localhost:8080` en nuestro navegador de kali linux para poder acceder a la herramienta de MobSF.
 
 ### Web service
 
