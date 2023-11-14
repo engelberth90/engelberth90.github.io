@@ -18,7 +18,7 @@ tags:
 
 ## Static analysis of android applications
 
-![](/assets/images/Estatico-Android/rootME.jpg)
+![](/assets/images/Estatico-Android/android-phone-root.jpg)
 
 Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es el analisis dinamico de una sobre un APK.
 
