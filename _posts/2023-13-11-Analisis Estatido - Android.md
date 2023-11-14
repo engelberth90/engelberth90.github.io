@@ -4,7 +4,7 @@ title: Analisis estatico - Android
 date: 2023-11-13
 classes: wide
 header:
-  teaser: /assets/images/Estatico-Android/rootME.jpg
+  #teaser: /assets/images/Estatico-Android/rootME.jpg
 categories:
   - Static Analysis
   - Android Hacking
@@ -18,7 +18,7 @@ tags:
 
 ## Static analysis of android applications
 
-![](/assets/images/htb-writeup-smasher/smasher.png)
+![](/assets/images/Estatico-Android/rootME.jpg)
 
 Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es el analisis dinamico de una sobre un APK.
 
