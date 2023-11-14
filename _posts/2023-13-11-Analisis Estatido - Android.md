@@ -253,6 +253,21 @@ Running migrations:
 
 ![](/assets/images/Estatico-Android/mobsf.png)
 
+Para poder empezar analizar un APK, solo necesitamos dar click a la opción de `Upload & Analyze` y seleccionar nuesta APK:
+
+![](/assets/images/Estatico-Android/uploading-apk.png)
+
+Luego de que se cargue y analice el APK podremos empezar a ver los resultados sobre el analisis:
+
+![](/assets/images/Estatico-Android/resultado-mobsf.png)
+
+Con los resultados de MobSF podremos encontrar algunos correos que aveces son de utilidad para las auditorias ya que, en algunos casos, encontramos correos corporativos dentro del codigo de la aplicación:
+
+![](/assets/images/Estatico-Android/email-mobsf.png)
+
+De la misma manera MobSF nos mostrara palabras hardcodeadas dentro de la aplicación que algunas veces podran ser de utilidad:
+
+![](/assets/images/Estatico-Android/hardocode-mobsf.png)
 
 ### Web service
 
