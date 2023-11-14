@@ -27,14 +27,12 @@ Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es 
 - Extraer APK del dispotivo.
 - Analisis estatico automatico con MOBSF.
 - Analisis estatico manual con JADX.
-- To gain user, we have to solve an Oracle padding challenge that gives us the user password
-- Priv esc is a race condition in a suid root ELF binary, we can swap out the file with a symlink to /root/root.txt to get the root flag
 
 ### Tools used
 
-- pwntools
-- [https://libc.blukat.me/](https://libc.blukat.me/)
-- [https://github.com/twd2/padding-oracle-attack/blob/master/attack.py](https://github.com/twd2/padding-oracle-attack/blob/master/attack.py)
+- [https://github.com/MobSF/Mobile-Security-Framework-MobSF](MOBSF)
+- [https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-gui-1.4.7-no-jre-win.exe](JADX)
+- [https://github.com/iBotPeaches/Apktool](APK Tool)
 
 ### Nmap
 
