@@ -27,6 +27,7 @@ Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es 
 - Extraer APK del dispotivo.
 - Analisis estatico automatico con MOBSF.
 - Analisis estatico manual con JADX.
+- Apktool.
 
 ### Tools used
 
@@ -34,36 +35,25 @@ Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es 
 - [JADX](https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-gui-1.4.7-no-jre-win.exe)
 - [Apktool](https://github.com/iBotPeaches/Apktool)
 
-### Nmap
+### Extraer el APK desde un dispositivo fisico
 
-Quick port scan reveals a webserver running on a non standard port 1111.
+### MobSF
+
+Nos dirigimos a nuestra maquina Linux, en mi caso sera `Kali Linux` y necesitaremos clonar el repositorio de MobSF con el siguiente comando `git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git`.
 
 ```
-root@kali:~/hackthebox# nmap -sC -sV 10.10.10.89
-Starting Nmap 7.70 ( https://nmap.org ) at 2018-06-11 20:09 EDT
-Nmap scan report for 10.10.10.89
-Host is up (0.017s latency).
-Not shown: 998 closed ports
-PORT     STATE SERVICE         VERSION
-22/tcp   open  ssh             OpenSSH 7.2p2 Ubuntu 4ubuntu2.4 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
-|   2048 a6:23:c5:7b:f1:1f:df:68:25:dd:3a:2b:c5:74:00:46 (RSA)
-|   256 57:81:a5:46:11:33:27:53:2b:99:29:9a:a8:f3:8e:de (ECDSA)
-|_  256 c5:23:c1:7a:96:d6:5b:c0:c4:a5:f8:37:2e:5d:ce:a0 (ED25519)
-1111/tcp open  lmsocialserver?
-| fingerprint-strings: 
-|   FourOhFourRequest, GenericLines, SIPOptions: 
-|     HTTP/1.1 404 Not found
-|     Server: shenfeng tiny-web-server
-|     Content-length: 14
-|     File not found
-|   GetRequest, HTTPOptions, RTSPRequest: 
-|     HTTP/1.1 200 OK
-|     Server: shenfeng tiny-web-server
-|     Content-Type: text/html
-|     <html><head><style>body{font-family: monospace; font-size: 13px;}td {padding: 1.5px 6px;}</style></head><body><table>
-|     <tr><td><a href="index.html">index.html</a></td><td>2018-03-31 00:57</td><td>2.1K</td></tr>
-|_    </table></body></html>
+
+```
+
+Luego de clonar el repositorio, necesitaremos montar un contenedor de docker con la herramienta para hacer uso de todos los recursos que MobSF necesita, utilizaremos el comando: `docker pull opensecurity/mobile-security-framework-mobsf:latest`, para este punto tendremos que tenes instalado docker en nuestra maquina linux:
+
+```                                                                                                                                                               
+┌──(T1N0㉿kali)-[~/Documents/mobile]
+└─$ ls   
+Mobile-Security-Framework-MobSF                                                                                                                                                                         
+┌──(T1N0㉿kali)-[~/Documents/mobile]
+└─$ 
+
 ```
 
 ### Web service
