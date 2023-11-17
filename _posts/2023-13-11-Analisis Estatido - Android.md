@@ -37,6 +37,17 @@ Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es 
 
 ### Extraer el APK desde un dispositivo fisico
 
+Tenemos que conectarnos por ADB al dispositivo para luego ejecutar el siguiente comando: `pm list packages -3 | grep injured`, en la primer seride de comandos lo que hacermos es decirle al sistema que nos liste todos los paquetes de terceros, ya  con la ayuda del `|` y del comando `grep` le pedimos que busque una palabra clave la cual es `injured`, la palabara la buscamos basandonos en el nobre de la aplicación y asi no ver todos los paquetes de terceros que existen en el dispositivo.
+
+Con esto ahora usamos de nuevo el comando `pm` para encontrar la ruta completa del apk especificando el paquete con el siguiente comando: `pm path [package]`:
+
+![](/assets/images/Estatico-Android/ruta-apk.png)
+
+Con la ruta completa del apk, ahora solo tendremos que salirnos de adb para luego sacar el apk con el siguiente comando de abd: `adb pull [ruta-apk] [ruta-destino-windows]`:
+
+![](/assets/images/Estatico-Android/base-apk.png)
+
+
 ### MobSF
 
 Nos dirigimos a nuestra maquina Linux, en mi caso sera `Kali Linux` y necesitaremos clonar el repositorio de MobSF con el siguiente comando `git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git`.
