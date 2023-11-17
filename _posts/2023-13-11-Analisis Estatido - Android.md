@@ -284,4 +284,52 @@ Ahora solo tendremos que interpretar los resultados que nos entrega MobSF para e
 
 ### JADX
 
+JADX es una herramienta que nos ayuda a descompilar de `.DEX` a `java`, la herramienta la podemos usar de manera grafica o desde linea de comandos, para esta explicación se utilizara la version grafica en windows.
 
+Luego de instalar JADX procedemos abrir la herramienta y veremos algo como esto:
+
+![](/assets/images/Estatico-Android/open-jadx.png)
+
+Donde solo tendremos que dar click en la opcion `Open file` donde nosotros tendremos que buscar el apk el cual analizaremos y luego de que cargue y JADX haga su trabajo veremos algo como esto:
+
+![](/assets/images/Estatico-Android/open-jadx.png)
+
+JADX nos ofrece una funcionalidad que en lo personal creo que es de las mejores y la cual es poder hacer una busqueda de palabras clave en todo el paquete:
+
+![](/assets/images/Estatico-Android/fidn-jadx.png)
+
+Esta es una pequeña lista que siempre utilizo en mis auditorias:
+
+- user
+- username
+- pass 
+- password
+- key
+- token
+- http://
+- https://
+- secret
+- databaseschema
+- @gmail
+- md5
+- base64
+- database
+- github
+- firebase
+- aws
+- cloud
+- domain
+- dns
+- host
+- ip
+- port
+- uri
+- url
+- conecction
+- mysql
+- ftp
+- target
+
+![](/assets/images/Estatico-Android/resultados-jadx.png)
+
+Sabiendo esto y viendo los resultados para cada palabra clave que ingresemos solo necesitamos indagar mas entre el codigo fuente para encontrar algo que nos sea de utilidad a la hora de una auditoria
