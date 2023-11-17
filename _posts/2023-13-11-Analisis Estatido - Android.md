@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Analisis estatico - Android
-date: 2023-11-13
+date: 2023-11-17
 classes: wide
 header:
   #teaser: /assets/images/Estatico-Android/rootME.jpg
