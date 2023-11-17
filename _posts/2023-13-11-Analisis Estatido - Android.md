@@ -13,31 +13,28 @@ tags:
   - Analysis
   - MobSF
   - JADX
-  - APK Tool  
 ---
 
 ## Static analysis of android applications
 
 ![](/assets/images/Estatico-Android/android-phone-root.jpg)
 
-Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es el analisis dinamico de una sobre un APK.
+Esta publicación cubrira la primer parte de las auditorias mobiles, la cual es el analisis estatico sobre un APK, no se profundizara tanto en las busquedas o en todas las tecnicas, se usaran solo tecnicas sencillas para poder entender la manera de analizar correctamente un APK.
 
 ### Resumen
 
 - Extraer APK del dispotivo.
 - Analisis estatico automatico con MOBSF.
 - Analisis estatico manual con JADX.
-- Apktool.
 
 ### Tools used
 
 - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF)
 - [JADX](https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-gui-1.4.7-no-jre-win.exe)
-- [Apktool](https://github.com/iBotPeaches/Apktool)
 
 ### Extraer el APK desde un dispositivo fisico
 
-Tenemos que conectarnos por ADB al dispositivo para luego ejecutar el siguiente comando: `pm list packages -3 | grep injured`, en la primer seride de comandos lo que hacermos es decirle al sistema que nos liste todos los paquetes de terceros, ya  con la ayuda del `|` y del comando `grep` le pedimos que busque una palabra clave la cual es `injured`, la palabara la buscamos basandonos en el nobre de la aplicación y asi no ver todos los paquetes de terceros que existen en el dispositivo.
+Tenemos que conectarnos por ADB al dispositivo para luego ejecutar el siguiente comando: `pm list packages -3 | grep injured`, en la primer serie de de comandos lo que hacemos es decirle al sistema que nos liste todos los paquetes de terceros, con la ayuda del `|` y del comando `grep` le pedimos que busque una palabra clave la cual es `injured`, la palabara la buscamos basandonos en el nombre de la aplicación y asi no ver todos los paquetes de terceros que existen en el dispositivo.
 
 Con esto ahora usamos de nuevo el comando `pm` para encontrar la ruta completa del apk especificando el paquete con el siguiente comando: `pm path [package]`:
 
@@ -286,11 +283,7 @@ Ahora solo tendremos que interpretar los resultados que nos entrega MobSF para e
 
 JADX es una herramienta que nos ayuda a descompilar de `.DEX` a `java`, la herramienta la podemos usar de manera grafica o desde linea de comandos, para esta explicación se utilizara la version grafica en windows.
 
-Luego de instalar JADX procedemos abrir la herramienta y veremos algo como esto:
-
-![](/assets/images/Estatico-Android/open-jadx.png)
-
-Donde solo tendremos que dar click en la opcion `Open file` donde nosotros tendremos que buscar el apk el cual analizaremos y luego de que cargue y JADX haga su trabajo veremos algo como esto:
+Luego de instalar JADX procedemos abrir la herramienta y veremos algo como esto Donde solo tendremos que dar click en la opcion `Open file`, luego nosotros tendremos que buscar el apk el cual analizaremos, despues de que cargue JADX veremos algo como esto:
 
 ![](/assets/images/Estatico-Android/open-jadx.png)
 
